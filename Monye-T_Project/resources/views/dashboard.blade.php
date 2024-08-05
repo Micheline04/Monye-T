@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="ButtonArea">
+            <div class="w-100 d-flex justify-content-center">
                 <button style="box-shadow: 0 2px 2px 0 #00000025;" type="submit" class="yellow-button">Tambah</button>
             </div>
         </form>
@@ -225,10 +225,11 @@
                         <div class="d-flex align-items-center gap-2 ">
                             @if ($pencatatan->status == "Pemasukan")
                                 <img width="25" height="25" src="{{asset('../assets/Dashboard/UpArrow.png')}}" alt="">
+                                <h5 class="nominal_uang IncreaseNumber mb-1">{{ $pencatatan->jumlah }}</h5>
                             @else
                                 <img width="25" height="25" src="{{asset('../assets/Dashboard/DownArrow.png')}}" alt="">
+                                <h5 class="nominal_uang DecreaseNumber mb-1">{{ $pencatatan->jumlah }}</h5>
                             @endif
-                            <h5 class="nominal_uang IncreaseNumber mb-1">{{ $pencatatan->jumlah }}</h5>
                         </div>
                         <p class="m-0" style="font-weight: 600;">{{ $pencatatan->tanggal }}</p>
                     </div>
@@ -282,10 +283,11 @@
             </div>
         </div>
     </div>
-    @include('components.flash')
     @include('popup_Transaksi')
 </div>
-
+<div style="margin-left: 150px;">
+    @include('components.flash')
+</div>
 
 <script src="{{ asset('/popup/popup.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
